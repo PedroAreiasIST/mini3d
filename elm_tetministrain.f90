@@ -1,0 +1,108 @@
+!**************************************************************
+!* AceGen    6.808 Linux (6 Sep 16)                           *
+!*           Co. J. Korelc  2013           27 May 24 16:34:08 *
+!**************************************************************
+! User     : Full professional version
+! Notebook : elm_tetministrain
+! Evaluation time                 : 2 s     Mode  : Optimal
+! Number of formulae              : 76      Method: Automatic
+! Subroutine                      : elm_tetministrain size: 1615
+! Total size of Mathematica  code : 1615 subexpressions
+! Total size of Fortran code      : 3947 bytes
+
+!******************* S U B R O U T I N E **********************
+SUBROUTINE elm_tetministrain(v,sqrtm,oriframe,xi,rna,alpha,rnb,proposedgrad,relativestrain)
+USE SMSUtility
+IMPLICIT NONE
+DOUBLE PRECISION v(153),sqrtm,oriframe(3,3),xi(3),rna(4,3),alpha(3),rnb(4,3),proposedgrad(3,3),relativestrain&
+&(6)
+v(148)=-rnb(1,3)+rnb(4,3)
+v(147)=-rnb(1,3)+rnb(3,3)
+v(146)=-rnb(1,3)+rnb(2,3)
+v(145)=-rnb(1,2)+rnb(4,2)
+v(144)=-rnb(1,2)+rnb(3,2)
+v(143)=-rnb(1,2)+rnb(2,2)
+v(142)=-rnb(1,1)+rnb(4,1)
+v(141)=-rnb(1,1)+rnb(3,1)
+v(140)=-rnb(1,1)+rnb(2,1)
+v(137)=xi(2)*xi(3)
+v(135)=alpha(1)*v(137)
+v(133)=1d0-xi(1)-xi(2)-xi(3)
+v(134)=v(133)*xi(1)
+v(61)=alpha(1)*v(134)
+v(67)=alpha(2)*v(134)
+v(73)=alpha(3)*v(134)
+v(58)=-(v(135)*xi(1))
+v(136)=-rna(1,1)+v(58)
+v(57)=rna(2,1)+v(133)*v(135)+v(136)
+v(60)=rna(3,1)+v(136)+v(61)*xi(3)
+v(62)=rna(4,1)+v(136)+v(61)*xi(2)
+v(63)=alpha(2)*v(137)
+v(65)=-(v(63)*xi(1))
+v(138)=-rna(1,2)+v(65)
+v(64)=rna(2,2)+v(138)+v(133)*v(63)
+v(66)=rna(3,2)+v(138)+v(67)*xi(3)
+v(68)=rna(4,2)+v(138)+v(67)*xi(2)
+v(69)=alpha(3)*v(137)
+v(71)=-(v(69)*xi(1))
+v(139)=-rna(1,3)+v(71)
+v(70)=rna(2,3)+v(139)+v(133)*v(69)
+v(72)=rna(3,3)+v(139)+v(73)*xi(3)
+v(74)=rna(4,3)+v(139)+v(73)*xi(2)
+v(93)=-(v(144)*v(146))+v(143)*v(147)
+v(89)=-(v(145)*v(146))+v(143)*v(148)
+v(85)=-(v(145)*v(147))+v(144)*v(148)
+v(84)=v(140)*v(85)-v(141)*v(89)+v(142)*v(93)
+v(86)=v(85)/v(84)
+v(87)=(v(142)*v(147)-v(141)*v(148))/v(84)
+v(88)=(-(v(142)*v(144))+v(141)*v(145))/v(84)
+v(90)=-(v(89)/v(84))
+v(91)=(-(v(142)*v(146))+v(140)*v(148))/v(84)
+v(92)=(v(142)*v(143)-v(140)*v(145))/v(84)
+v(94)=v(93)/v(84)
+v(95)=(v(141)*v(146)-v(140)*v(147))/v(84)
+v(96)=(-(v(141)*v(143))+v(140)*v(144))/v(84)
+v(97)=v(57)*v(86)+v(60)*v(90)+v(62)*v(94)
+v(98)=v(57)*v(87)+v(60)*v(91)+v(62)*v(95)
+v(99)=v(57)*v(88)+v(60)*v(92)+v(62)*v(96)
+v(100)=v(64)*v(86)+v(66)*v(90)+v(68)*v(94)
+v(101)=v(64)*v(87)+v(66)*v(91)+v(68)*v(95)
+v(102)=v(64)*v(88)+v(66)*v(92)+v(68)*v(96)
+v(103)=v(70)*v(86)+v(72)*v(90)+v(74)*v(94)
+v(119)=oriframe(2,3)*v(100)+oriframe(3,3)*v(103)+oriframe(1,3)*v(97)
+v(113)=oriframe(2,2)*v(100)+oriframe(3,2)*v(103)+oriframe(1,2)*v(97)
+v(107)=oriframe(2,1)*v(100)+oriframe(3,1)*v(103)+oriframe(1,1)*v(97)
+v(104)=v(70)*v(87)+v(72)*v(91)+v(74)*v(95)
+v(120)=oriframe(2,3)*v(101)+oriframe(3,3)*v(104)+oriframe(1,3)*v(98)
+v(114)=oriframe(2,2)*v(101)+oriframe(3,2)*v(104)+oriframe(1,2)*v(98)
+v(108)=oriframe(2,1)*v(101)+oriframe(3,1)*v(104)+oriframe(1,1)*v(98)
+v(105)=v(70)*v(88)+v(72)*v(92)+v(74)*v(96)
+v(121)=oriframe(2,3)*v(102)+oriframe(3,3)*v(105)+oriframe(1,3)*v(99)
+v(115)=oriframe(2,2)*v(102)+oriframe(3,2)*v(105)+oriframe(1,2)*v(99)
+v(109)=oriframe(2,1)*v(102)+oriframe(3,1)*v(105)+oriframe(1,1)*v(99)
+v(106)=oriframe(1,1)*v(107)+oriframe(2,1)*v(108)+oriframe(3,1)*v(109)
+v(110)=oriframe(1,2)*v(107)+oriframe(2,2)*v(108)+oriframe(3,2)*v(109)
+v(111)=oriframe(1,3)*v(107)+oriframe(2,3)*v(108)+oriframe(3,3)*v(109)
+v(112)=oriframe(1,1)*v(113)+oriframe(2,1)*v(114)+oriframe(3,1)*v(115)
+v(116)=oriframe(1,2)*v(113)+oriframe(2,2)*v(114)+oriframe(3,2)*v(115)
+v(117)=oriframe(1,3)*v(113)+oriframe(2,3)*v(114)+oriframe(3,3)*v(115)
+v(118)=oriframe(1,1)*v(119)+oriframe(2,1)*v(120)+oriframe(3,1)*v(121)
+v(122)=oriframe(1,2)*v(119)+oriframe(2,2)*v(120)+oriframe(3,2)*v(121)
+v(123)=oriframe(1,3)*v(119)+oriframe(2,3)*v(120)+oriframe(3,3)*v(121)
+sqrtm=v(84)
+proposedgrad(1,1)=v(106)
+proposedgrad(1,2)=v(110)
+proposedgrad(1,3)=v(111)
+proposedgrad(2,1)=v(112)
+proposedgrad(2,2)=v(116)
+proposedgrad(2,3)=v(117)
+proposedgrad(3,1)=v(118)
+proposedgrad(3,2)=v(122)
+proposedgrad(3,3)=v(123)
+relativestrain(1)=((-1d0)+(v(106)*v(106))+(v(112)*v(112))+(v(118)*v(118)))/2d0
+relativestrain(2)=((-1d0)+(v(110)*v(110))+(v(116)*v(116))+(v(122)*v(122)))/2d0
+relativestrain(3)=((-1d0)+(v(111)*v(111))+(v(117)*v(117))+(v(123)*v(123)))/2d0
+relativestrain(4)=v(106)*v(110)+v(112)*v(116)+v(118)*v(122)
+relativestrain(5)=v(106)*v(111)+v(112)*v(117)+v(118)*v(123)
+relativestrain(6)=v(110)*v(111)+v(116)*v(117)+v(122)*v(123)
+END
